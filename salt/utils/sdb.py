@@ -143,4 +143,4 @@ def sdb_get_or_set_hash(
         val = "".join([random.SystemRandom().choice(chars) for _ in range(length)])
         sdb_set(uri, val, opts, utils)
 
-    return ret or val
+    return ret or val.encode(__salt_system_encoding__)
